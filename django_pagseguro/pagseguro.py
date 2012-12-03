@@ -35,7 +35,7 @@ class ItemPagSeguro(object):
         self.quant = quant
         self._valor = valor
         self._frete = frete
-        self._tipofrete = tipofrete
+        self.tipofrete = tipofrete
         self.peso = peso
 
     @property
