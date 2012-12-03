@@ -19,18 +19,23 @@ class ItemPagSeguro(object):
         R$ 1,50      1.50                150
         R$ 32,53     32.53               3253
     """
-    def __init__(self, cod, descr, quant, valor, frete=0, peso=0):
+    def __init__(self, cod, descr, quant, valor, frete=0, peso=0,tipofrete=""):
         """
         O parâmetro cod deve ser único por CarrinhoPagSeguro
 
         Os parâmetros frete e peso são opcionais, os outros são
         obrigatórios
+        
+        Tipos de envio(só necessário informar apenas uma vez) :
+        EN = Ecomenda Econômica (PAC)
+        SD = Sedex
         """
         self.cod = cod
         self.descr = descr
         self.quant = quant
         self._valor = valor
         self._frete = frete
+        self._tipofrete = tipofrete
         self.peso = peso
 
     @property
