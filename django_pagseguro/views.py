@@ -23,7 +23,8 @@ def retorno(request):
     """
     if request.method == 'POST':
         request.encoding = 'ISO-8859-1'
-        dados = dict((k, v.encode('ISO-8859-1')) for k, v in request.POST.items())
+        #dados = dict((k, v.encode('ISO-8859-1')) for k, v in request.POST.items())
+        data = request.POST.copy()
         valido = validar_dados(dados)
         if valido:
             return HttpResponse('OK')
