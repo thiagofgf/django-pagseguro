@@ -33,8 +33,8 @@ class PagSeguroSignal(object):
         para evirar erros.
         """
         status = dados['StatusTransacao']
-        #self.status = normalize('NFKD', status.decode('utf-8')).encode('ASCII','ignore')
-        self.status = status.decode('ASCII','ignore').encode('utf8')
+        self.status = normalize('NFKD', status.decode('utf-8')).encode('ASCII','ignore')
+        #self.status = status.decode('ASCII','ignore').encode('utf8')
         self.referencia = dados['Referencia']
         self.dados = dados
 
@@ -51,6 +51,7 @@ class PagSeguroSignal(object):
             'Aguardando Pagamento': pagamento_aguardando,
             'Aguardando Pagto': pagamento_aguardando, # PagSeguro uso abreviado em alguns casos
             'Em Analise': pagamento_em_analise,
+            'Em Anlise': pagamento_em_analise,
             'Completo': pagamento_completo,
             'Devolvido': pagamento_devolvido,
         }
