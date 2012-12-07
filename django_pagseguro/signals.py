@@ -33,7 +33,8 @@ class PagSeguroSignal(object):
         para evirar erros.
         """
         status = dados['StatusTransacao']
-        self.status = normalize('NFKD', status.decode('utf-8')).encode('ASCII','ignore')
+        #self.status = normalize('NFKD', status.decode('utf-8')).encode('ASCII','ignore')
+        self.status = decode('ISO-8859-1'.encode('utf8')
         self.referencia = dados['Referencia']
         self.dados = dados
 
