@@ -19,7 +19,9 @@
         {% if item.tipofrete %}
 		<input type="hidden" name="tipo_frete" value="{{ item.tipofrete }}">
 		{% endif %}
-
+		{% if extras %}
+		<input type="hidden" name="extras" value="{{ extras }}">
+		{% endif %}
     {% endfor %}
     <input type="image" src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/pagamentos/94x52-comprar-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
 </form>

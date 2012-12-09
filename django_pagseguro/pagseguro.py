@@ -76,6 +76,7 @@ class CarrinhoPagSeguro(object):
         """
         self.cliente = {}
         self.itens = []
+        self.extras = None
         self.config = {
             'tipo' : 'CP',
             'moeda': 'BRL',
@@ -109,7 +110,10 @@ class CarrinhoPagSeguro(object):
         Para mais informações consulte a documentação da classe ItemPagSeguro
         """
         self.itens.append(item)
-
+    
+    def set_discount(self,value):
+        self.extras = -(int(value * 100))
+    
     def form(self, template='pagseguro_form.html'):
         """
         Realiza o render do formulário do PagSeguro baseado no template.
